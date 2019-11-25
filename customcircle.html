@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body onload="draw()">
+	<canvas id="sketch" width="300" height="300">
+	</canvas>
+	<script>
+		function draw() {
+      var sketch = document.getElementById('sketch');
+      var context = sketch.getContext("2d");
+      var radiusstring = prompt ("Enter a radius");
+      var radiusint  = parseInt (radiusstring);
+//use a while loop to ensure the user enters an accatble value
+    	while(radiusint>150){
+      //terminating condition-when radius int is less that 150
+      var radiusstring = prompt ("Radius must be less than 150 becase max canvas size is 150");
+      var radiusint  = parseInt (radiusstring);
+    }
+//color user input
+			var color = prompt ("pick a color, red, green or blue");
+			while (color !=="red" && color !=="blue" && color !=="green" )
+{
+//use a while loop combines three differnt conditions for red green and blue
+			var color = prompt ("Please enter a color, red, green or blue");
+}
+//define fill hex code based on user input
+if(color === "red"){
+context.fillStyle = "#780d0d";
+}else if(color === "green"){
+context.fillStyle = "#23612b";
+}else if(color === "blue"){
+context.fillStyle = "#234461";
+}
+//now using the user input draw the circle
+
+			context.fillStyle = "color";
+			context.beginPath();
+			context.arc(150, 150, radiusint, 0, 2 * Math.PI, true);
+			context.closePath();
+			context.fill();
+		}
+	</script>
+</body>
+</html>

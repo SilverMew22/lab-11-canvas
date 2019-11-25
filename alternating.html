@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body onload="draw()">
+	<canvas id="sketch" width="300" height="300">
+	</canvas>
+	<script>
+		function draw() {
+		 	   var sketch = document.getElementById('sketch');
+			   var context = sketch.getContext("2d");
+         var userstring = prompt ("How many pairs do you want");
+         var usernum = parseInt (userstring);
+         var thismany = usernum * 2 - 1;
+
+        for(i=0;i<=thismany;i++){
+          if(i%2==0){
+            context.fillStyle = "#236159";
+            context.fillRect((i * 25),20,20,20);
+          }else{
+            context.fillStyle = "#56b0ab";
+            context.beginPath();
+            //left/right_up/down_size_starting point_ending point_clockwise=true
+            context.arc((i*25+10), 60, 10, 0, 2 * Math.PI, true));
+            context.closePath();
+            context.fill();
+          }
+      //context.fillRect((i * 25),20,20,20);
+      //move x over and make size small to see space and + 10 will make an offset from the squares
+    }
+		}
+	</script>
+</body>
+</html>
