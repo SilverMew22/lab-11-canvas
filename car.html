@@ -10,21 +10,42 @@
 		function draw() {
 		 	var sketch = document.getElementById('sketch');
 			var context = sketch.getContext("2d");
-      context.fillStyle = "#00ff00";
-      context.fillRect(50, 90, 100, 50);
-      context.fillRect(75, 60, 50, 50);
-			context.fillStyle = "#B82118";
-
+		 //top	
+      context.fillStyle = "#e35f98";	 
+      context.fillRect(40, 90, 120, 50);
+	  
+	  //bottom
+	  context.fillStyle = "#e35f98";
+      context.fillRect(65, 60, 70, 50);
+	  //window
+	  context.fillStyle = "#c4f5f2";
+      context.fillRect(110, 70, 20, 20);
+	  //left wheel
+			context.fillStyle = "#6b6e6d";
 			context.beginPath();
-			context.arc(50, 140, 20, 0, 2 * Math.PI, true);
+			context.arc(70, 140, 20, 0, 2 * Math.PI, true);
 			context.closePath();
 			context.fill();
-
-      context.fillStyle = "#B82118";
+//right wheel
+      context.fillStyle = "#6b6e6d";
 			context.beginPath();
-			context.arc(150, 140, 20, 0, 2 * Math.PI, true);
+			context.arc(130, 140, 20, 0, 2 * Math.PI, true);
 			context.closePath();
 			context.fill();
+			//caps
+			//right cap
+      context.fillStyle = "#dbdbdb";
+			context.beginPath();
+			context.arc(130, 140, 10, 0, 2 * Math.PI, true);
+			context.closePath();
+			context.fill();
+//left cap
+			context.fillStyle = "#dbdbdb";
+			context.beginPath();
+			context.arc(70, 140, 10, 0, 2 * Math.PI, true);
+			context.closePath();
+			context.fill();
+			
 		}
 	</script>
 </body>
